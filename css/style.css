@@ -35,6 +35,11 @@ body {
   height: 50px;
   text-align: center;
   font-size: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px 0 var(--orange-color);
 }
 #todo-form input[type="text"] {
   width: 100%;
@@ -108,7 +113,7 @@ body {
   animation: fadeInRight 1s;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .column {
