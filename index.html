@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>TodoList</title>
+  </head>
+  <body
+    oncontextmenu="return false"
+    ondragstart="return false"
+    onselectstart="return false"
+    class="login-false"
+  >
+    <div class="wrap">
+      <header>
+        <div id="header-top">
+          <div id="userName">
+            <span>사용자</span>
+          </div>
+          <div id="today">
+            <span></span>
+            <span></span>
+          </div>
+          <span id="logOut">로그아웃</span>
+        </div>
+      </header>
+      <main>
+        <form id="login-form">
+          <input
+            type="text"
+            required
+            maxlength="15"
+            placeholder="사용할 닉네임을 입력해주세요."
+          />
+        </form>
+        <div class="hidden" id="main-container">
+          <div id="calendar"></div>
+          <div id="todo">
+            <form id="todo-form">
+              <input
+                type="text"
+                required
+                maxlength="20"
+                placeholder="할 일을 작성해주세요 (최대 20글자, 11개)"
+              />
+            </form>
+            <div id="todo-list">
+              <ul></ul>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div id="footer-bottom">
+          <div class="column">
+            <span id="quoteTitle"> 오늘의 인용문 </span>
+            <span id="quote"></span>
+          </div>
+          <div class="column">
+            <span id="weatherTitle"> 오늘의 날씨 </span>
+            <span id="weather"></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/todo.js"></script>
+    <script src="./js/clock.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
