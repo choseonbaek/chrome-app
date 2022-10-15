@@ -1,6 +1,3 @@
-// import data from '/json/quote.js';
-// let quotes = data;
-
 const quotes = [
   {
     number: "1",
