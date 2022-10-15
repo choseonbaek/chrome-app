@@ -1,4 +1,4 @@
-import data from '/json/quote.js';
+import data from 'json/quote.js';
 let quotes = data;
 
 const quoteBtn = document.getElementById('quoteBtn');
