@@ -15,28 +15,27 @@ function randomQuote() {
     quote.innerText = randomQuote.quote + " - " + randomQuote.author 
 }
 
+logOut.addEventListener("click", function () {
+  localStorage.clear();
+  document.querySelector("#main-container").classList.add(HIDDEN_CLASS);
+  window.location.reload();
+});
 
-logOut.addEventListener('click', function() {
-    localStorage.clear();
-    window.location.reload()
-})
-
-loginForm.addEventListener('submit', function() {
-    event.preventDefault()
-    localStorage.setItem(USERNAME_KEY, loginInput.value)
-    showApp()
-})
+loginForm.addEventListener("submit", function () {
+  event.preventDefault();
+  localStorage.setItem(USERNAME_KEY, loginInput.value);
+  showApp();
+});
 
 function showApp() {
-    loginForm.classList.add(HIDDEN_CLASS)
-    document.querySelector("#main-container").classList.remove(HIDDEN_CLASS)
-    document.querySelector("#userName span").innerText = localStorage.getItem(USERNAME_KEY)
-}
-function init() {
-    if(localStorage.getItem(USERNAME_KEY)){
-        showApp()
-    }
+  loginForm.classList.add(HIDDEN_CLASS);
+  document.querySelector("#main-container").classList.remove(HIDDEN_CLASS);
+  document.querySelector("#userName span").innerText =
+    localStorage.getItem(USERNAME_KEY);
 }
 
-init()
+if (localStorage.getItem(USERNAME_KEY)) {
+  showApp();
+}
+
 randomQuote();
