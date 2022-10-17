@@ -156,9 +156,73 @@ button {
 
 #calendar {
   width: 400px;
-  min-height: 370px;
+  height: 370px;
   background-color: var(--orange-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 30px;
+}
+
+#calendar-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+#year {
+  font-weight: 600;
+}
+#month-picker {
+  display: flex;
+}
+#month {
+  margin: 0 20px;
+  width: 70px;
+  text-align: center;
+}
+#month:hover,
+.month-change:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  color: var(--color-txt);
+  width: 100%;
+}
+.days span {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+  animation: to-top 1s forwards;
+}
+.days span:hover {
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  background-color: #f2edee;
+  border-radius: 20%;
+}
+.current-date {
+  color: black;
+  background-color: white;
+  border-radius: 20%;
 }
