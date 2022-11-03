@@ -11,18 +11,18 @@ const getFebDays = (year) => {
 };
 
 const month_names = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "07",
+  "08",
+  "09",
+  "10",
+  "11",
+  "12",
 ];
 
 let calendar_header_year = document.querySelector("#year");
@@ -57,6 +57,7 @@ const generateCalendar = (month, year) => {
     //시작날부터
     if (i >= first_day.getDay()) {
       day.innerHTML = i - first_day.getDay() + 1;
+      day.id = String(year) + (month + 1) + day.innerHTML;
 
       if (
         i - first_day.getDay() + 1 === currentDate.getDate() &&

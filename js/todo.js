@@ -31,6 +31,7 @@ function paintToDo(newToDo) {
   toDoList.appendChild(li);
 }
 
+let today = new Date();
 function submitEvent() {
   event.preventDefault();
   if (toDos.length >= 11) {
@@ -39,6 +40,10 @@ function submitEvent() {
     const newToDo = toDoInput.value;
     toDoInput.value = "";
     const toDoObj = {
+      date:
+        String(today.getFullYear()) +
+        String(today.getMonth() + 1) +
+        String(today.getDate()),
       id: Date.now(),
       text: newToDo,
     };
