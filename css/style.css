@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "Cafe24Ssurround";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NanumSquareNeo-Variable";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "NanumSquareNeo-Variable";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 30px;
+  background: #ffffff;
+  height: 688px;
+  width: 459px;
+  border-radius: 27px;
+  box-shadow: 1px 1px 10px #838794;
+}
+.dark {
+  background: #1b1d25;
+  color: #ffffff;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.top .date {
+  font-family: "Cafe24Ssurround";
+  font-weight: 400;
+  font-size: 40px;
+  color: #bb2649;
+  display: flex;
+  flex-direction: column;
+}
+/* mode */
+.top .mode span {
+  font-size: 104px;
+  color: #1b1d25;
+  translate: 0 20px;
+  transform: rotate(30.45deg);
+  cursor: pointer;
+  transition: color 0.5s;
+}
+.dark .mode span {
+  color: #ffffff;
+}
+
+.todo-box {
+  height: 400px;
+  overflow: auto;
+}
+/* task 배치, light hover */
+.todo {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  align-items: center;
+}
+.todo:hover {
+  background: #f6f6f6;
+}
+/* dark mode hover */
+.dark .todo:hover {
+  background: #242835;
+}
+.todo div {
+  display: flex;
+}
+/* checkbox custom */
+.todo div input {
+  position: absolute;
+  top: -1000%;
+}
+.todo div label {
+  position: relative;
+  font-size: 14px;
+  padding: 15px 0;
+}
+.todo div label::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  background: url(../img/light_verified.png) no-repeat;
+  margin-right: 13px;
+}
+.dark .todo div label::before {
+  background: url(../img/dark_verified.png) no-repeat;
+}
+.todo div input:checked + label::before {
+  content: "";
+  background: url(../img/light_verified_dark.png) no-repeat;
+  width: 18px;
+  height: 18px;
+}
+.dark .todo div input:checked + label::before {
+  background: url(../img/dark_verified_white.png) no-repeat;
+}
+/* X */
+.todo span {
+  display: block;
+  cursor: pointer;
+}
+.todo span:hover {
+  color: #bb2649;
+}
+
+.todo-form input {
+  padding: 0 10px;
+  border-color: #bb2649;
+  width: 100%;
+  height: 40px;
+  background: #bb2649;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  font-size: 10px;
+  color: rgba(124, 124, 124, 1);
+}
